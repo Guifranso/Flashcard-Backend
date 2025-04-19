@@ -26,6 +26,8 @@ dependencies {
     implementation(libs.ktor.server.cors)
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
+    implementation("org.litote.kmongo:kmongo-coroutine:5.2.0")
+
     implementation(libs.ktor.server.config.yaml)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
