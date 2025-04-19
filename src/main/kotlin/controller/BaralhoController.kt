@@ -4,7 +4,6 @@ import Baralho
 import com.ppm.repository.BaralhoRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.map
 
 class BaralhoController(
     private val repository: BaralhoRepository

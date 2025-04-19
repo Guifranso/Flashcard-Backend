@@ -1,11 +1,10 @@
 package com.ppm
 
 import Baralho
-import com.ppm.database.MongoClientProvider
 import com.ppm.repository.BaralhoRepository
 import com.ppm.routes.baralhoRoutes
 import io.ktor.server.application.*
-import io.ktor.server.routing.routing
+import io.ktor.server.routing.*
 import kotlinx.coroutines.runBlocking
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
