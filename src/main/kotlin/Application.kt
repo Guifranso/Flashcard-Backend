@@ -7,6 +7,7 @@ import com.ppm.routes.baralhoRoutes
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
 import kotlinx.coroutines.runBlocking
+import org.koin.ktor.ext.get
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 import org.koin.ktor.plugin.Koin
@@ -23,9 +24,7 @@ fun Application.module() {
         modules(appModule)
     }
 
-    val client = KMongo.createClient().coroutine
-    val db = client.getDatabase("Flashcard")
-    val flashcardRepo = BaralhoRepository(db)
+    val flashcardRepo = this.get<BaralhoRepository>()
 
     runBlocking {
         val resultados: List<Baralho> = flashcardRepo.buscarTodos()
