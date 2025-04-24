@@ -1,7 +1,10 @@
 package com.ppm.repository
 
 import Baralho
+import com.ppm.database.MongoClientProvider
 import org.bson.types.ObjectId
+import org.koin.java.KoinJavaComponent.get
+import org.koin.java.KoinJavaComponent.inject
 import org.litote.kmongo.coroutine.CoroutineDatabase
 import org.litote.kmongo.eq
 
