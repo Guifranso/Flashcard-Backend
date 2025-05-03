@@ -14,7 +14,7 @@ class BaralhoController(
         return lista.asFlow()
     }
 
-    /*
+
     suspend fun getBaralhoById(id: ObjectId): Baralho? {
         return repository.buscarPorId(id)
     }
@@ -30,5 +30,5 @@ class BaralhoController(
     suspend fun deletarBaralho(id: ObjectId) {
         repository.deletar(id)
     }
-    */
+
 }
