@@ -31,4 +31,12 @@ dependencies {
     implementation(libs.ktor.server.config.yaml)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
+
+    implementation(platform("io.insert-koin:koin-bom:3.5.0"))
+    implementation("io.insert-koin:koin-core")
+    implementation("io.insert-koin:koin-ktor:3.5.0")
+    implementation("io.insert-koin:koin-logger-slf4j:3.5.0")
+
 }
+
+
