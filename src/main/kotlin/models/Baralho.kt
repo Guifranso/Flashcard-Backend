@@ -4,7 +4,8 @@ import org.bson.types.ObjectId
 
 @Serializable
 data class Baralho(
-    @BsonId val id: ObjectId = ObjectId(),
+    @BsonId
+    val id: ObjectId = ObjectId(),
     val cartas: List<Carta>,
     val id_usuario: String
 )
@@ -16,12 +17,6 @@ data class Carta(
     val pergunta: String,
     val resposta: Int, // índice da alternativa correta
     val alternativas: List<String>,
-    val localizacao: Localizacao,
+    val localizacao: String,
     val proxima_revisao: String
-)
-
-@Serializable
-data class Localizacao(
-    val lat: Double,
-    val lon: Double
 )
