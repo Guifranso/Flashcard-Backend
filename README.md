@@ -7,9 +7,13 @@ This project was created using the [Ktor Project Generator](https://start.ktor.i
 Para criar o banco de dados é necessário criar um banco MongoDB local, para isso aconselho o uso da plataforma [MongoCompass](https://github.com/Guifranso/Flashcard-Backend). Passo a passo após instalar a plataforma:
 
 1 - Crie uma nova conexão
+
 2 - Crie um novo banco de dados com o nome de "Flashcard"
+
 3 - Dentro do banco de dados crie uma tabela com o nome de "Baralho"
+
 4 - Rode os endpoints da aplicação para popular o banco
+
 5 - Pronto 🎉
 
 ## Building & Running
