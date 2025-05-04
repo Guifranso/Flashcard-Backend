@@ -18,12 +18,8 @@ import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 
 
-fun Route.baralhoRoutes() {
-    // injeta o controller via Koin
-    val client = KMongo.createClient().coroutine
-    val db = client.getDatabase("Flashcard")
-    val repository = BaralhoRepository(db)
-    val controller = BaralhoController(repository)
+fun Route.baralhoRoutes(controller: BaralhoController) {
+
     route("/baralhos") {
 
         /* GET /baralhos – lista todos */

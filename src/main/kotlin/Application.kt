@@ -1,15 +1,15 @@
 package com.ppm
 
 import Baralho
-import appModule
+import com.example.flashlearn.controllers.BaralhoController
+import com.ppm.di.appModule
 import com.ppm.repository.BaralhoRepository
 import com.ppm.routes.baralhoRoutes
 import io.ktor.server.application.*
+import io.ktor.server.plugins.swagger.swaggerUI
 import io.ktor.server.routing.*
 import kotlinx.coroutines.runBlocking
 import org.koin.ktor.ext.get
-import org.litote.kmongo.coroutine.coroutine
-import org.litote.kmongo.reactivestreams.KMongo
 import org.koin.ktor.plugin.Koin
 import org.koin.logger.SLF4JLogger
 
@@ -24,7 +24,9 @@ fun Application.module() {
         modules(appModule)
     }
 
+
     val flashcardRepo = this.get<BaralhoRepository>()
+    val controller = this.get<BaralhoController>()
 
     runBlocking {
         val resultados: List<Baralho> = flashcardRepo.buscarTodos()
@@ -33,7 +35,8 @@ fun Application.module() {
     }
 
     routing {
-        baralhoRoutes()
+        swaggerUI(path = "swagger", swaggerFile = "openapi/documentation.yaml")
+        baralhoRoutes(controller)
     }
 
     configureSerialization()

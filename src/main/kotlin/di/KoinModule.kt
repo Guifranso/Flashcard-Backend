@@ -1,4 +1,5 @@
-// di/KoinModule.kt
+package com.ppm.di
+
 import com.example.flashlearn.controllers.BaralhoController
 import com.ppm.database.MongoClientProvider
 import com.ppm.repository.BaralhoRepository
