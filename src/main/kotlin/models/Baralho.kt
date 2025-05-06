@@ -6,6 +6,7 @@ import org.bson.types.ObjectId
 data class Baralho(
     @BsonId
     val id: ObjectId = ObjectId(),
+    val titulo: String,
     val cartas: List<Carta>,
     val id_usuario: String
 )
